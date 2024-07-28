@@ -18,15 +18,21 @@ The best place to download high-quality LiDAR data is from the NOAA Digital Coas
 
 You can set up the conda environment for this project two ways:
   1. Use the environment.yml file in this repo to set up your conda environment.
-  2. Manuall install the following packages:
-         -
+  2. Manually install the following packages:
+         - 
 
 **Creating the DEM from LiDAR**
 
-1. Unzip the .LAZ files. You can batch convert .LAZ files to .LAS files using https://github.com/LummiGIS/LAS_tools/blob/main/LAZ_to_LAS.py 
-2. Convert the .LAS files into .tif files. You can do this using https://github.com/LummiGIS/Batch_LAS_to_Raster/blob/main/batch_las_to_raster.py. I run this script in my ArcGIS Pro Window. You can also install arcpy. I find it easier to run it directly in the ArcGIS Python Window.
+  1. Unzip the .LAZ files. You can batch convert .LAZ files to .LAS files using https://github.com/LummiGIS/LAS_tools/blob/main/LAZ_to_LAS.py 
+  2. Convert the .LAS files into .tif files. You can do this using https://github.com/LummiGIS/Batch_LAS_to_Raster/blob/main/batch_las_to_raster.py. I run this script in my ArcGIS Pro Python Window. You can also install arcpy. I find it easier to run it directly in the ArcGIS Python Window.
 
 **Correcting Bad Bathymetry Data** 
 
-1. 
+LiDAR data for bodies of water is not always the most accurate. If you intend to include bodies of water in your study area, this section is for you. If having accurate data for water bodies is not important to your project, feel free to skip to the next section. To replace the bathymetric LiDAR with higher accurate, lower resolution data: 
+  1. Find bathymetry data for your area of interest. I used https://www.ncei.noaa.gov/products/great-lakes-bathymetry becuase my study area included the great lakes. NOAA has other great datasets for coastal bathymetry which can be found at this link https://www.ncei.noaa.gov/maps/bathymetry/.
+  2. If you are just filling holes in your data skip this step. If you want to remove LiDAR bathymetry data before replacing it with other data you need to erase the water values from your DEM. I did this using the Erase and Extract by Mask tools in ArcPro. You can do this however you see fit.
+  3. Next you are going to want to downscale the resolution of your new data to fit your DEM dervived from LiDAR and replace the novalue pixels with that new data. You can do that using the script I included in this repo:
+
+**Visualizing your DEM** 
+  1. You can visualize your DEM using the script I included in this repo: 
  
