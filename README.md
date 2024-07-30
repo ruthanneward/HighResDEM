@@ -17,13 +17,16 @@ The best place to download high-quality LiDAR data is from the NOAA Digital Coas
 **Setting up a Conda Environment** 
 
 You can set up the conda environment for this project two ways:
-  1. Use the environment.yml file in this repo to set up your conda environment.
+  1. Use the HighResDEM_env.yml file in this repo to set up your conda environment.
   2. Manually install the following packages:
-         - 
-
+       - numpy
+       - rasterio
+       - matplotlib
+       - laspy[laszip]
+    
 **Creating the DEM from LiDAR**
 
-  1. Unzip the .LAZ files. You can batch convert .LAZ files to .LAS files using https://github.com/LummiGIS/LAS_tools/blob/main/LAZ_to_LAS.py 
+  1. Unzip the .LAZ files. You can batch convert .LAZ files to .LAS files using https://github.com/LummiGIS/LAS_tools/blob/main/LAZ_to_LAS.py. If you are using bathymetric data as well as topographic data you can use the script I have included in this repo: LAZ_to_LAS_bathymetry.ipyk
   2. Convert the .LAS files into .tif files. You can do this using https://github.com/LummiGIS/Batch_LAS_to_Raster/blob/main/batch_las_to_raster.py. I run this script in my ArcGIS Pro Python Window. You can also install arcpy. I find it easier to run it directly in the ArcGIS Python Window.
 
 **Correcting Bad Bathymetry Data** 
