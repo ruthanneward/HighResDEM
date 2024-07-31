@@ -1,7 +1,7 @@
 # Creating a high-resolution DEM from LiDAR data
 ## Author: Ruthanne Ward
 ## Organization: Cooperative Institute for Great Lakes Research 
-## Date: August 8, 2024
+## Date: August 2, 2024
 
 ### This repository explains how to create a high-resolution digital elevation model (DEM) from start to finish using your own data. This repository is a product of the NOAA Cooperative Institute of Great Lakes Research 2024 Summer Fellows Program.
 
